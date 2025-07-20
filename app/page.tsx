@@ -8,7 +8,7 @@ import {
   Github,
   Linkedin,
   Mail,
-  ExternalLink,
+  MessageCircle,
   Code,
   Menu,
   X,
@@ -213,7 +213,7 @@ function Badge({
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme>('corporate');
   const [typedText, setTypedText] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [themeMenuOpen, setThemeMenuOpen] = useState(false);
@@ -490,8 +490,14 @@ export default function Portfolio() {
                   <Github className='mr-2 h-5 w-5' />
                   View GitHub
                 </Button>
-                <Button variant="outline" size="lg" onClick={() => window.open("/abel_fagbemi_resume.pdf", "_blank")}>
-                  <Download className="mr-2 h-5 w-5" />
+                <Button
+                  variant='outline'
+                  size='lg'
+                  onClick={() =>
+                    window.open('/abel_fagbemi_resume.pdf', '_blank')
+                  }
+                >
+                  <Download className='mr-2 h-5 w-5' />
                   Download Resume
                 </Button>
               </motion.div>
@@ -756,10 +762,12 @@ export default function Portfolio() {
                 ))}
               </div>
 
-              <Button size='lg'>
-                <Mail className='mr-2 h-5 w-5' />
-                Start a Conversation
-              </Button>
+              <a href='https://wa.me/2348113996249'>
+                <Button size='lg'>
+                  <MessageCircle className='mr-2 h-5 w-5' />
+                  Start a Conversation
+                </Button>
+              </a>
             </motion.div>
           </div>
         </section>
