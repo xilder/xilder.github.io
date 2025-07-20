@@ -8,7 +8,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/xilder.github.io',
+  basePath: process.env.NODE_ENV === 'production' ? '/xilder.github.io' : '',
   output: 'export',
 };
 

@@ -17,6 +17,7 @@ import {
   ArrowDown,
   Server,
   Database,
+  Download,
 } from 'lucide-react';
 
 // Types
@@ -42,27 +43,27 @@ const themes = [
   {
     name: 'Dark',
     value: 'dark' as Theme,
-    description: 'Professional dark theme',
+    // description: 'Professional dark theme',
   },
   {
-    name: 'Light Minimal',
+    name: 'Light',
     value: 'light' as Theme,
-    description: 'Clean minimal light theme',
+    // description: 'Clean minimal light theme',
   },
   {
     name: 'Cyberpunk',
     value: 'cyberpunk' as Theme,
-    description: 'Futuristic neon theme',
+    // description: 'Futuristic neon theme',
   },
   {
     name: 'Corporate',
     value: 'corporate' as Theme,
-    description: 'Professional business theme',
+    // description: 'Professional business theme',
   },
   {
     name: 'Gradient',
     value: 'gradient' as Theme,
-    description: 'Colorful gradient theme',
+    // description: 'Colorful gradient theme',
   },
 ];
 
@@ -108,6 +109,8 @@ const socialLinks = [
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/abel-fagbemi/',
   },
+
+  { icon: Download, label: 'Resume', href: '/abel_fagbemi_resume.pdf' },
 ];
 
 // Utility function
@@ -347,9 +350,9 @@ export default function Portfolio() {
                               <div className='font-medium'>
                                 {themeOption.name}
                               </div>
-                              <div className='text-sm opacity-70'>
+                              {/* <div className='text-sm opacity-70'>
                                 {themeOption.description}
-                              </div>
+                              </div> */}
                             </button>
                           ))}
                         </div>
@@ -486,6 +489,10 @@ export default function Portfolio() {
                 >
                   <Github className='mr-2 h-5 w-5' />
                   View GitHub
+                </Button>
+                <Button variant="outline" size="lg" onClick={() => window.open("/abel_fagbemi_resume.pdf", "_blank")}>
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Resume
                 </Button>
               </motion.div>
             </motion.div>
@@ -741,7 +748,6 @@ export default function Portfolio() {
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.1 }}
                     href={link.href}
-                    
                     className='contact-social-link flex items-center space-x-3 transition-colors'
                   >
                     <link.icon className='h-6 w-6' />
@@ -761,26 +767,25 @@ export default function Portfolio() {
         {/* Footer */}
         <footer className='footer py-8 px-4 border-t'>
           <div className='flex max-w-6xl mx-auto text-center justify-center space-x-4 items-center'>
-            <div><p className='footer-text'>
-              &copy; 2025 Abel Fagbemi.
-            </p></div>
+            <div>
+              <p className='footer-text'>&copy; 2025 Abel Fagbemi.</p>
+            </div>
             <div className='flex justify-center items-center space-x-8 pb-2'>
-                {socialLinks.map((link, index) => (
-                  <motion.a
-                    key={link.label}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.1 }}
-                    href={link.href}
-                    
-                    className='contact-social-link flex items-center space-x-3 transition-colors'
-                  >
-                    <link.icon className='h-6 w-6' />
-                  </motion.a>
-                ))}
-              </div>
+              {socialLinks.map((link, index) => (
+                <motion.a
+                  key={link.label}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.1 }}
+                  href={link.href}
+                  className='contact-social-link flex items-center space-x-3 transition-colors'
+                >
+                  <link.icon className='h-6 w-6' />
+                </motion.a>
+              ))}
+            </div>
           </div>
         </footer>
       </motion.div>

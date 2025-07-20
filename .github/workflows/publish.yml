@@ -10,7 +10,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -31,6 +31,8 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: npx next build
+        env:
+          NODE_ENV: 'production'
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
